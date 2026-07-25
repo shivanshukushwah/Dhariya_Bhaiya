@@ -1,0 +1,72 @@
+:root {
+  --primary-color: #ed2f59;
+  --primary-hover: #f56981;
+  --bg-dark: #000000;
+  --bg-darker: #202020;
+  --text-light: #ffffff;
+  --text-dark: #323232;
+  
+  --font-heading: 'Ubuntu', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-container {
+  overflow-x: hidden;
+}
+
+/* Reusable Components */
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--text-light);
+  border-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

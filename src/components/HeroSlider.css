@@ -1,0 +1,114 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(1.2) contrast(1.1);
+  transform: scale(1.05);
+  transition: transform 10s ease;
+  opacity: 0.6;
+}
+
+.slider-overlay {
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-light);
+  z-index: 10;
+}
+
+.slider-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-condensed);
+}
+
+/* Floating Book Now */
+.book-now {
+  background: green;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1rem;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  top: 50%;
+  right: -25px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  transform: rotate(90deg);
+  transform-origin: bottom center;
+  width: 130px;
+  z-index: 9999;
+  padding: 1px;
+}
+
+.mobile-fixed {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .slider-container {
+    height: 50vh;
+  }
+
+  .slider-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .book-now {
+    display: none;
+  }
+
+  .mobile-fixed {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+  }
+
+  .mobile-fixed .appoint,
+  .mobile-fixed .call {
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .mobile-fixed .appoint {
+    background: var(--primary-color);
+  }
+
+  .mobile-fixed .call {
+    background: #458b0f;
+  }
+
+  .mobile-fixed a span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
