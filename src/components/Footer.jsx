@@ -6,17 +6,19 @@ import { FaFacebook, FaYoutube, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope
 const Footer = () => {
   return (
     <footer className="footer-section">
-      <div className="container">
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
         <div className="footer-grid">
           <div className="footer-col">
-            <img src="/dummy-logo.png" alt="Logo" className="footer-logo" style={{ borderRadius: '50%' }} />
+            <Link to="/" className="footer-logo-link">
+              <img src="/images/drive_photos/owner%20images/logo.png" alt="Q'riflame Salon Logo" className="footer-logo" />
+            </Link>
             <p className="footer-about">
               Experience top-notch care at the best premium beauty salon. Our expert makeup artists and premium hair & skincare treatments ensure you always look your best.
             </p>
             <div className="footer-social">
-              <a href="#"><FaFacebook /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="#" aria-label="Facebook"><FaFacebook /></a>
+              <a href="#" aria-label="YouTube"><FaYoutube /></a>
+              <a href="#" aria-label="Instagram"><FaInstagram /></a>
             </div>
           </div>
           
@@ -34,15 +36,23 @@ const Footer = () => {
           <div className="footer-col">
             <h3>Contact Info</h3>
             <ul className="footer-contact">
-              <li><FaMapMarkerAlt className="contact-icon" /> 123 Fashion Street, Beauty District, Cityville</li>
-              <li><FaPhone className="contact-icon" /> <a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+              <li><FaPhone className="contact-icon" /> <a href="tel:+919838615944">Academy: +91 9838615944</a></li>
+              <li><FaPhone className="contact-icon" /> <a href="tel:+919838615944">Salon: +91 9838615944</a></li>
               <li><FaEnvelope className="contact-icon" /> <a href="mailto:info@premiumsalon.com">info@premiumsalon.com</a></li>
+              <li><FaMapMarkerAlt className="contact-icon" /> <span>123 Premium Salon Street,<br/>New York, NY 10001</span></li>
             </ul>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Premium Salon. All Rights Reserved.</p>
+          <div className="footer-bottom-content">
+            <p>&copy; {new Date().getFullYear()} Q'riflame Salon & Academy. All Rights Reserved.</p>
+            <div className="footer-bottom-links">
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
+              <span className="separator">|</span>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

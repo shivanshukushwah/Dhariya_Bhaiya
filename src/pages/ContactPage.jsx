@@ -1,65 +1,82 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import './ContactPage.css';
 
 const ContactPage = () => {
   return (
     <>
       <PageHeader title="Contact Us" breadcrumbs={[{ label: 'Contact Us' }]} />
       
-      <div className="container" style={{ padding: '60px 15px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '40px' }}>
-          
-          {/* Contact Info Sidebar */}
-          <div style={{ background: 'var(--bg-darker)', color: 'var(--text-light)', padding: '40px', borderRadius: '10px' }}>
-            <h3 style={{ color: 'var(--primary-color)', marginBottom: '30px' }}>Get In Touch</h3>
+      <section className="contact-section">
+        <div className="container">
+          <div className="contact-grid">
             
-            <div style={{ display: 'flex', gap: '20px', marginBottom: '30px' }}>
-              <FaMapMarkerAlt style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }} />
-              <div>
-                <h4 style={{ marginBottom: '5px' }}>Head Office</h4>
-                <p style={{ color: '#a0a0a0', fontSize: '0.9rem' }}>123 Fashion Street, Beauty District, Cityville</p>
+            {/* Contact Info Sidebar */}
+            <div className="contact-info-box">
+              <h3 className="sub-heading">Get In Touch</h3>
+              
+              <div className="info-item">
+                <FaMapMarkerAlt className="info-icon" />
+                <div>
+                  <h4>Location</h4>
+                  <p>123 Fashion Street, Beauty District, Cityville</p>
+                </div>
+              </div>
+              
+              <div className="info-item">
+                <FaPhone className="info-icon" />
+                <div>
+                  <h4>Contact</h4>
+                  <a href="tel:+919838615944">Academy: +91 9838615944</a><br/>
+                  <a href="tel:+919838615944">Salon: +91 9838615944</a>
+                </div>
+              </div>
+              
+              <div className="info-item">
+                <FaEnvelope className="info-icon" />
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:info@qriflamesalon.com">info@qriflamesalon.com</a>
+                </div>
               </div>
             </div>
             
-            <div style={{ display: 'flex', gap: '20px', marginBottom: '30px' }}>
-              <FaPhone style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }} />
-              <div>
-                <h4 style={{ marginBottom: '5px' }}>Phone</h4>
-                <a href="tel:+918181898181" style={{ color: '#a0a0a0', fontSize: '0.9rem' }}>+91 81818 98181</a>
-              </div>
+            {/* Contact Form */}
+            <div className="contact-form-box">
+              <h2>Send Us A Message</h2>
+              <p>Have a question about our services or academy? Fill out the form below.</p>
+              
+              <form className="contact-form">
+                <div className="form-row">
+                  <input type="text" placeholder="Your Name" required />
+                  <input type="email" placeholder="Your Email" required />
+                </div>
+                <div className="form-row">
+                  <input type="tel" placeholder="Phone Number" required />
+                  <input type="text" placeholder="Subject" required />
+                </div>
+                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" className="btn-solid-primary">Send Message</button>
+              </form>
             </div>
-            
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <FaEnvelope style={{ color: 'var(--primary-color)', fontSize: '1.5rem' }} />
-              <div>
-                <h4 style={{ marginBottom: '5px' }}>Email</h4>
-                <a href="mailto:info@premiumsalon.com" style={{ color: '#a0a0a0', fontSize: '0.9rem' }}>info@premiumsalon.com</a>
-              </div>
-            </div>
-          </div>
-          
-          {/* Contact Form */}
-          <div style={{ background: '#f9f9f9', padding: '40px', borderRadius: '10px' }}>
-            <h2 style={{ color: 'var(--bg-dark)', marginBottom: '10px' }}>Send Us A Message</h2>
-            <p style={{ color: '#666', marginBottom: '30px' }}>Have a question about our services or academy? Fill out the form below.</p>
-            
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <input type="text" placeholder="Your Name" style={{ padding: '15px', border: '1px solid #ccc', borderRadius: '5px' }} />
-                <input type="email" placeholder="Your Email" style={{ padding: '15px', border: '1px solid #ccc', borderRadius: '5px' }} />
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <input type="tel" placeholder="Phone Number" style={{ padding: '15px', border: '1px solid #ccc', borderRadius: '5px' }} />
-                <input type="text" placeholder="Subject" style={{ padding: '15px', border: '1px solid #ccc', borderRadius: '5px' }} />
-              </div>
-              <textarea placeholder="Your Message" rows="6" style={{ padding: '15px', border: '1px solid #ccc', borderRadius: '5px' }}></textarea>
-              <button type="button" className="btn-outline-primary" style={{ background: 'var(--primary-color)', color: '#fff', alignSelf: 'flex-start', padding: '12px 30px' }}>Send Message</button>
-            </form>
+
           </div>
 
+          <div className="legal-content">
+            <div className="legal-box">
+              <h3>Terms & Conditions</h3>
+              <p>Welcome to Q'riflame Salon & Academy. By booking an appointment or enrolling in our academy, you agree to our terms of service...</p>
+              <a href="/terms-and-conditions" className="btn-outline-primary btn-sm mt-3">Read More</a>
+            </div>
+            <div className="legal-box">
+              <h3>Privacy Policy</h3>
+              <p>Your privacy is important to us. This privacy policy explains how we collect, use, and protect your personal information...</p>
+              <a href="/privacy-policy" className="btn-outline-primary btn-sm mt-3">Read More</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

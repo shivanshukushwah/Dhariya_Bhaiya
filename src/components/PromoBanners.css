@@ -1,0 +1,179 @@
+.promo-banner {
+  padding: 60px 0;
+  margin: 40px 0;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Booking Promo specific */
+.booking-promo {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400?text=Booking+Background') center/cover;
+  color: white;
+}
+
+.booking-promo .promo-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 10px;
+  color: #222;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.booking-promo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.booking-promo .sub-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.booking-promo .services-list {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.booking-promo .highlight-box {
+  background: #fdf1ed;
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.booking-promo .highlight-box p {
+  margin: 0;
+  font-weight: 600;
+  color: #a05a5a;
+}
+
+.booking-promo .contact-info .phone-number {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.booking-promo .offers-text {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Courses Promo specific */
+.courses-promo {
+  background: #f4efe9;
+  border: 1px solid #e0d5c1;
+}
+
+.courses-promo-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.courses-promo .title-script {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-style: italic;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.courses-promo .subtitle-box {
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.courses-promo .subtitle-box p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.courses-promo .topics-list {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.courses-promo .emi-badge {
+  background: #1c5235;
+  color: white;
+  padding: 12px 25px;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.courses-promo .phone-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+}
+
+.courses-promo .promo-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.courses-promo .certified-badge {
+  text-align: center;
+  color: #1a422d;
+}
+
+.courses-promo .certified-badge h3 {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.courses-promo .certified-badge h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin: 5px 0;
+}
+
+.courses-promo .certified-badge p {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.courses-promo .free-kit-badge {
+  background: #1c5235;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .courses-promo-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .courses-promo .promo-right {
+    align-items: center;
+  }
+}

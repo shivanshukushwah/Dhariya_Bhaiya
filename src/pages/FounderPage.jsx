@@ -9,7 +9,7 @@ const FounderPage = () => {
       <div className="container" style={{ padding: '60px 15px', maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <img 
-            src="https://via.placeholder.com/250?text=Founder" 
+            src="/images/drive_photos/owner%20images/_DSC2177.JPG.jpeg" 
             alt="Founder" 
             style={{ width: '250px', borderRadius: '50%', border: '5px solid var(--primary-color)', marginBottom: '20px' }}
           />

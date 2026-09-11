@@ -1,23 +1,40 @@
 .page_header {
   background-color: var(--bg-dark);
-  padding-top: 15px;
   position: relative;
   z-index: 1000;
   width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
+/* --- Top Bar --- */
 .top-bar {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
+  font-size: 0.85rem;
+}
+
+.top-bar-content {
   display: flex;
-  justify-content: flex-end;
-  padding: 0.5rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-left {
+  display: flex;
+  gap: 20px;
+}
+
+.top-link {
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.top-link:hover {
+  color: var(--primary-color);
 }
 
 .top-bar-right {
@@ -26,90 +43,149 @@
   gap: 15px;
 }
 
-.top-btn {
-  border: 1px solid var(--primary-color);
-  padding: 0px 10px;
-  color: var(--text-light);
-  font-size: 14px;
+.follow-text {
+  color: #888;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1rem;
   transition: all 0.3s;
 }
 
-.top-btn:hover {
-  background-color: var(--primary-color);
-}
-
-.social-link {
-  color: var(--text-light);
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.social-link:hover {
+.social-icons a:hover {
   color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
+/* --- Main Header --- */
 .main-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
+  padding: 15px 0;
+  background-color: var(--bg-dark);
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
 .logo-container {
-  flex: 0 0 8.333333%;
-  max-width: 8.333333%;
+  flex: 0 0 auto;
 }
 
 .logo img {
-  width: 100%;
-  height: auto;
-  margin-top: -50px; /* Matching original site's negative margin */
+  height: 50px; /* Adjust height as needed, avoiding negative margin hacks */
+  width: auto;
+  display: block;
 }
 
+/* Navigation */
 .nav-container {
-  flex: 0 0 91.666667%;
-  max-width: 91.666667%;
-  text-align: center;
-}
-
-.sf-menu {
+  flex: 1 1 auto;
   display: flex;
   justify-content: center;
-  gap: 20px;
 }
 
-.sf-menu li a {
+.main-menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu li a {
   color: var(--text-light);
-  font-size: 15px;
-  padding: 5px 10px;
-  text-transform: capitalize;
-  transition: all 0.2s ease-in-out;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.main-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.main-menu li.active a,
+.main-menu li a:hover {
+  color: var(--primary-color);
+}
+
+.main-menu li.active a::after,
+.main-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+  flex: 0 0 auto;
+}
+
+.btn-book {
   display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.sf-menu li.active a,
-.sf-menu li a:hover {
-  background-color: var(--primary-hover);
-  color: var(--text-light);
-  transform: scale(1.1);
+.btn-book:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(237, 47, 89, 0.3);
 }
 
-@media only screen and (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .top-bar {
     display: none;
   }
-  .main-header {
-    flex-direction: column;
+  
+  .header-inner {
+    flex-wrap: wrap;
   }
-  .logo-container, .nav-container {
+  
+  .nav-container {
+    order: 3;
     flex: 0 0 100%;
-    max-width: 100%;
+    margin-top: 15px;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
+  
+  .main-menu {
+    gap: 15px;
+  }
+  
   .logo img {
-    width: 50px;
-    margin: auto;
+    height: 40px;
   }
-  .sf-menu {
-    flex-direction: column;
-    gap: 10px;
+  
+  .btn-book {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }

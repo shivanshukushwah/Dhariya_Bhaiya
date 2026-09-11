@@ -15,10 +15,45 @@ const GalleryPage = () => {
     <>
       <PageHeader title="Our Gallery" breadcrumbs={[{ label: 'Gallery' }]} />
       
-      <div className="container" style={{ padding: '60px 15px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h2 style={{ color: 'var(--primary-color)' }}>Our Masterpieces</h2>
-          <p style={{ maxWidth: '600px', margin: '15px auto', fontSize: '1.1rem' }}>
+      <div className="container" style={{ padding: '80px 15px' }}>
+        <div style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center', 
+          marginBottom: '60px',
+          maxWidth: '900px',
+          margin: '0 auto 60px auto'
+        }}>
+          <h2 style={{ 
+            color: 'var(--primary-color)', 
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            marginBottom: '15px',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            position: 'relative',
+            paddingBottom: '15px'
+          }}>
+            Our Masterpieces
+            <span style={{
+              position: 'absolute',
+              bottom: 0,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '4px',
+              backgroundColor: 'var(--primary-color)',
+              borderRadius: '2px'
+            }}></span>
+          </h2>
+          <p style={{ 
+            fontSize: '1.2rem', 
+            lineHeight: '1.8', 
+            color: '#555',
+            marginTop: '20px',
+            marginBottom: '20px' 
+          }}>
             A glimpse into our exquisite makeup and styling sessions.
           </p>
         </div>
