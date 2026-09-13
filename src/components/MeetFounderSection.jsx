@@ -14,18 +14,16 @@ const MeetFounderSection = () => {
         <div className="founder-media-grid">
           {/* Images */}
           <div className="media-item">
-            <img src="/images/drive_photos/owner%20images/03.jpg" alt="Pratibha Shukla 1" className="media-img" />
+            <img src="/images/drive_photos/owner%20images/10_39_01%20PM.png" alt="Pratibha Shukla Action 1" className="media-img" />
           </div>
-          <div className="founder-media-item">
-            <img src="/images/drive_photos/owner%20images/01_23_54%20AM.png" alt="Pratibha Shukla 2" className="media-img" />
-          </div>
-          
           <div className="media-item">
-            <img src="/images/drive_photos/owner%20images/name.png" alt="Pratibha Shukla Signature" className="media-img" />
+            <img src="/images/drive_photos/owner%20images/10_43_58%20PM.png" alt="Pratibha Shukla Action 2" className="media-img" />
           </div>
-          <div className="media-item video-placeholder">
-            <div className="play-icon">▶</div>
-            <span>Founder Video</span>
+          <div className="media-item">
+            <img src="/images/drive_photos/owner%20images/01_04_23%20AM.png" alt="Pratibha Shukla Action 3" className="media-img" />
+          </div>
+          <div className="media-item">
+            <img src="/images/drive_photos/owner%20images/01_10_46%20AM.png" alt="Pratibha Shukla Action 4" className="media-img" />
           </div>
         </div>
       </div>

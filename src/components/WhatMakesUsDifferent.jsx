@@ -18,7 +18,7 @@ const WhatMakesUsDifferent = () => {
             </p>
           </div>
           <div className="different-image">
-            <img src="https://via.placeholder.com/600x800?text=Salon+Experience" alt="Salon Experience" />
+            <img src="/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/1.jpg" alt="Salon Experience" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
           </div>
         </div>
       </div>

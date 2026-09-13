@@ -97,7 +97,8 @@
   margin: 0;
 }
 
-.footer-links li, .footer-contact li {
+.footer-links li,
+.footer-contact li {
   margin-bottom: 18px;
 }
 

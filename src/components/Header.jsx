@@ -1,55 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import { FaMapMarkerAlt, FaEnvelope, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
   return (
     <header className="page_header">
-      {/* Top Bar */}
-      <div className="top-bar">
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
-          <div className="top-bar-content">
-            <div className="top-bar-left">
-              <a href="/locate-salon" className="top-link"><FaMapMarkerAlt /> Salon Finder</a>
-              <a href="mailto:info@premiumsalon.com" className="top-link"><FaEnvelope /> info@premiumsalon.com</a>
-            </div>
-            <div className="top-bar-right">
-              <span className="follow-text">Follow Us:</span>
+      <div className="container" style={{ maxWidth: '100%', margin: '0 auto', padding: '10px 40px' }}>
+        <div className="header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          
+          {/* Logo on the Left */}
+          <div className="logo-container">
+            <Link to="/" className="logo" aria-label="Salon homepage">
+              <img src="/images/drive_photos/owner%20images/logo_trimmed.png" alt="Q'riflame Salon Logo" />
+            </Link>
+          </div>
+
+          {/* Right Column for Top Bar & Main Nav */}
+          <div className="header-right-side">
+            
+            {/* Top Row: Mini links and Socials */}
+            <div className="top-mini-bar">
+              <div className="mini-links">
+                <Link to="/book-appointment" className="mini-btn">Book Appointment</Link>
+                <Link to="/salon-finder" className="mini-btn">Salon Finder <FaMapMarkerAlt size={12} /></Link>
+              </div>
               <div className="social-icons">
-                <a href="#" aria-label="Facebook"><FaFacebook /></a>
-                <a href="#" aria-label="YouTube"><FaYoutube /></a>
-                <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                <a href="#"><FaEnvelope /></a>
+                <a href="#"><FaFacebook /></a>
+                <a href="#"><FaYoutube /></a>
+                <a href="#"><FaInstagram /></a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Header */}
-      <div className="main-header">
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
-          <div className="header-inner">
-            <div className="logo-container">
-              <Link to="/" className="logo" aria-label="Salon homepage">
-                <img src="/images/drive_photos/owner%20images/logo.png" alt="Q'riflame Salon Logo" />
-              </Link>
-            </div>
-
+            {/* Bottom Row: Main Menu */}
             <nav className="nav-container">
               <ul className="main-menu">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/academy">Academy</Link></li>
-                <li><Link to="/our-gallery">Gallery</Link></li>
-                <li><Link to="/founder">Meet The Founder</Link></li>
-                <li><Link to="/contact-us">Contact Us</Link></li>
+                <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
+                <li><NavLink to="/services" className={({isActive}) => isActive ? 'active' : ''}>Services</NavLink></li>
+                <li><NavLink to="/academy" className={({isActive}) => isActive ? 'active' : ''}>Academy</NavLink></li>
+                <li><NavLink to="/our-gallery" className={({isActive}) => isActive ? 'active' : ''}>Gallery</NavLink></li>
+                <li><NavLink to="/contact-us" className={({isActive}) => isActive ? 'active' : ''}>Contact Us</NavLink></li>
               </ul>
             </nav>
 
-            <div className="header-actions">
-              <a href="/book-appointment" className="btn-book">Book Appointment</a>
-            </div>
           </div>
         </div>
       </div>

@@ -1,82 +1,111 @@
 .services-section {
-  padding: 80px 0;
-  background-color: #f9f9f9;
+  padding: 100px 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.services-section .section-title .main-heading {
+  color: var(--text-light);
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.services-section .divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary-color);
+  margin-bottom: 40px;
 }
 
 .services-main-tabs {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 25px;
+  margin-bottom: 35px;
   flex-wrap: wrap;
 }
 
 .main-tab-btn {
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  background: white;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  padding: 12px 35px;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Playfair Display', serif;
+  transition: all 0.4s ease;
+  font-family: var(--font-body);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .main-tab-btn:hover,
 .main-tab-btn.active {
   background: var(--primary-color);
-  color: white;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
 }
 
 .services-sub-tabs {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   flex-wrap: wrap;
 }
 
 .sub-tab-btn {
-  padding: 8px 20px;
-  font-size: 15px;
+  padding: 8px 24px;
+  font-size: 13px;
   background: transparent;
-  border: 1px solid #ddd;
-  color: #555;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaa;
   border-radius: 20px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .sub-tab-btn:hover,
 .sub-tab-btn.active {
-  background: #333;
-  color: white;
-  border-color: #333;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
 .service-category-card {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-  border-top: 4px solid var(--primary-color);
+  background: var(--bg-darker);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .service-card-img-wrapper {
-  margin: -25px -25px 20px -25px;
-  height: 200px;
-  border-radius: 10px 10px 0 0;
+  margin: -30px -30px 25px -30px;
+  height: 220px;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
+  position: relative;
+}
+
+.service-card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--bg-darker), transparent);
 }
 
 .service-card-img {
@@ -84,20 +113,25 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
 }
 
 .service-category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.service-category-card:hover .service-card-img {
+  transform: scale(1.05);
 }
 
 .service-category-header h3 {
-  font-size: 22px;
-  color: #333;
+  font-size: 1.6rem;
+  color: var(--primary-color);
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  font-family: 'Playfair Display', serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-heading);
 }
 
 .service-items-list {
@@ -109,30 +143,31 @@
 .service-items-list li {
   position: relative;
   padding-left: 20px;
-  margin-bottom: 12px;
-  color: #555;
-  font-size: 15px;
-  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: var(--font-body);
 }
 
 .bullet-point {
   position: absolute;
   left: 0;
-  top: 6px;
-  width: 8px;
-  height: 8px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
   background-color: var(--primary-color);
   border-radius: 50%;
 }
 
 @media (max-width: 768px) {
   .services-main-tabs {
-    gap: 10px;
+    gap: 15px;
   }
   
   .main-tab-btn {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
   }
 

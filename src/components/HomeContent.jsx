@@ -1,69 +1,87 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGem, FaGraduationCap, FaSpa } from 'react-icons/fa';
 import './HomeContent.css';
 
 const HomeContent = () => {
   return (
     <section className="home-content-section">
-      {/* Hero Section - Full Width */}
-      <div className="hero-section-custom" style={{ backgroundImage: "url('/hero-image.webp')" }}>
-        <div className="hero-overlay-dark"></div>
-        <div className="container hero-container-relative">
-          <div className="hero-text-content text-center">
-            <h4 className="hero-sub-heading">Q'RIFLAME SALON & ACADEMY</h4>
-            <h1 className="hero-main-heading">DISCOVER YOUR TRUE BEAUTY</h1>
-            <p className="hero-description mx-auto">
-              Experience the pinnacle of luxury beauty. We offer premium makeup, bridal, and salon services tailored to make you look and feel your absolute best.
-            </p>
-            <Link to="/book-appointment" className="btn-solid-primary mt-4">Book Appointment</Link>
+      {/* Hero Section - Layered Owner Image (Bhaavya Kapur Style) */}
+      <div className="hero-section-custom layered-hero">
+        {/* Background Large Outline Text in Motion */}
+        <div className="layered-bg-marquee">
+          <div className="layered-bg-text-track">
+            <span>Q'RIFLAME</span>
+            <span>Q'RIFLAME</span>
+            <span>Q'RIFLAME</span>
+            <span>Q'RIFLAME</span>
           </div>
-        </div>
-      </div>
-
-      <div className="container">
-        {/* Feature Grid - Glassmorphism Style */}
-        <div className="features-header text-center pt-5">
-          <h4 className="sub-heading">Our Expertise</h4>
-          <h2 className="main-heading">Premium Services Tailored For You</h2>
         </div>
         
-        <div className="feature-grid">
-          <div className="feature-card">
-            <img src="/images/drive_photos/services/Other/kimia-zarifi-AVJ321HJFl4-unsplash.jpg" alt="Skin Services" className="feature-card-img" />
-            <h3>Skin Services</h3>
-            <Link to="/services" className="feature-link">Read More &rarr;</Link>
-          </div>
-          <div className="feature-card">
-            <img src="/images/drive_photos/services/Other/rune-enstad-cowLgyb63c4-unsplash.jpg" alt="Academy" className="feature-card-img" />
-            <h3>Academy</h3>
-            <Link to="/academy" className="feature-link">Explore Courses &rarr;</Link>
-          </div>
-          <div className="feature-card">
-            <img src="/images/drive_photos/services/Other/shankar-mridha-PfNPSVa7OE0-unsplash.jpg" alt="Hair Service" className="feature-card-img" />
-            <h3>Hair Service</h3>
-            <Link to="/services" className="feature-link">View Treatments &rarr;</Link>
-          </div>
-          <div className="feature-card">
-            <img src="/images/drive_photos/services/Other/samantha-peralta-6udzUgtewa0-unsplash.jpg" alt="Manicure & Pedicure" className="feature-card-img" />
-            <h3>Manicure & Pedicure</h3>
-            <Link to="/services" className="feature-link">Read More &rarr;</Link>
-          </div>
-          <div className="feature-card">
-            <img src="/images/drive_photos/services/Other/ikshana-productions-L-_tcsP-wZc-unsplash.jpg" alt="Makeup" className="feature-card-img" />
-            <h3>Makeup</h3>
-            <Link to="/services" className="feature-link">Read More &rarr;</Link>
-          </div>
-          <div className="feature-card">
-            <img src="/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/1.jpg" alt="Unisex" className="feature-card-img" />
-            <h3>Unisex</h3>
-            <Link to="/services" className="feature-link">Read More &rarr;</Link>
-          </div>
+        <div className="layered-content-container">
+          {/* Foreground Text that sits behind the owner */}
+          <h1 className="layered-main-heading">
+            BE A Q'RIFLAME BRIDE
+          </h1>
+          
+          {/* Owner Image Cutout */}
+          <img src="/images/drive_photos/owner%20images/01_20_54_AM_cutout_trimmed.png" alt="Founder" className="layered-owner-img" />
         </div>
-
       </div>
 
-      {/* Call To Action - Full Width Gradient */}
+      <div className="container pt-4">
+        {/* Feature Grid - Luxury Overlay Style */}
+        <div className="feature-grid">
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/amish-thakkar-lAY2TAhN06k-unsplash.jpg" alt="Skin Services" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Skin Services</h3>
+              <span className="feature-link">Read More &rarr;</span>
+            </div>
+          </Link>
+
+          <Link to="/academy" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/arto-suraj-AmKDdf_ErUA-unsplash.jpg" alt="Academy" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Academy</h3>
+              <span className="feature-link">Explore Courses &rarr;</span>
+            </div>
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-3nYzHXMUV7k-unsplash.jpg" alt="Hair Service" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Hair Service</h3>
+              <span className="feature-link">View Treatments &rarr;</span>
+            </div>
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-nFR6mRpn8kc-unsplash.jpg" alt="Manicure & Pedicure" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Manicure & Pedicure</h3>
+              <span className="feature-link">Read More &rarr;</span>
+            </div>
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-z-iEOGOd_kg-unsplash.jpg" alt="Makeup" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Makeup</h3>
+              <span className="feature-link">Read More &rarr;</span>
+            </div>
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/the-artist-studio-oeKiBmplBtU-unsplash.jpg" alt="Unisex" className="feature-card-img" />
+            <div className="feature-card-overlay">
+              <h3>Bridal Packages</h3>
+              <span className="feature-link">Read More &rarr;</span>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      {/* Call To Action - Full Width Gold/Dark */}
       <div className="cta-banner">
         <div className="container cta-container">
           <div className="cta-text">
@@ -71,7 +89,7 @@ const HomeContent = () => {
             <p>Join thousands of satisfied clients who have discovered their true beauty with our exclusive salon services.</p>
           </div>
           <div className="cta-action">
-            <Link to="/contact-us" className="btn-cta-white">Book Appointment</Link>
+            <Link to="/contact-us" className="btn-solid-primary">Book Your Session</Link>
           </div>
         </div>
       </div>

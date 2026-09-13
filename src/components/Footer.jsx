@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="#" aria-label="Instagram"><FaInstagram /></a>
             </div>
           </div>
-          
+
           <div className="footer-col">
             <h3>Quick Links</h3>
             <ul className="footer-links">
@@ -32,18 +32,17 @@ const Footer = () => {
               <li><Link to="/contact-us">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div className="footer-col">
             <h3>Contact Info</h3>
             <ul className="footer-contact">
               <li><FaPhone className="contact-icon" /> <a href="tel:+919838615944">Academy: +91 9838615944</a></li>
               <li><FaPhone className="contact-icon" /> <a href="tel:+919838615944">Salon: +91 9838615944</a></li>
-              <li><FaEnvelope className="contact-icon" /> <a href="mailto:info@premiumsalon.com">info@premiumsalon.com</a></li>
-              <li><FaMapMarkerAlt className="contact-icon" /> <span>123 Premium Salon Street,<br/>New York, NY 10001</span></li>
+              <li><FaMapMarkerAlt className="contact-icon" /> <span>123 Premium Salon Street,<br />New York, NY 10001</span></li>
             </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p>&copy; {new Date().getFullYear()} Q'riflame Salon & Academy. All Rights Reserved.</p>

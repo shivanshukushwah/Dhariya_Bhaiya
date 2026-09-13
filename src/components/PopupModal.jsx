@@ -7,12 +7,7 @@ const PopupModal = () => {
   useEffect(() => {
     // Open popup automatically after 2 seconds
     const timer = setTimeout(() => {
-      // Check if it has been opened in this session to avoid annoying the user on every navigation
-      const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
-      if (!hasSeenPopup) {
-        setIsModalOpen(true);
-        sessionStorage.setItem('hasSeenPopup', 'true');
-      }
+      setIsModalOpen(true);
     }, 2000);
 
     return () => clearTimeout(timer);

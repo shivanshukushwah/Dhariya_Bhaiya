@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+
 :root {
-  --primary-color: #ed2f59;
-  --primary-hover: #f56981;
-  --bg-dark: #000000;
-  --bg-darker: #202020;
-  --text-light: #ffffff;
-  --text-dark: #323232;
+  --primary-color: #ed2f59;      /* Original Red/Pink */
+  --primary-hover: #f56981;      /* Original Light Red/Pink */
   
-  --font-heading: 'Ubuntu', sans-serif;
-  --font-body: 'Manrope', sans-serif;
-  --font-condensed: 'Barlow Condensed', sans-serif;
+  --bg-light: #FAF8F5;           /* Ivory / Cream */
+  --bg-dark: #121212;            /* Onyx Black */
+  --bg-darker: #1E1E1E;          /* Dark Slate */
+  
+  --text-light: #FFFFFF;         /* White */
+  --text-dark: #222222;          /* Deep Charcoal */
+  --text-muted: #555555;         /* Medium Slate */
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-condensed: 'Montserrat', sans-serif;
 }
 
 * {
@@ -19,20 +25,22 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--text-light);
+  background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 1px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 
 ul {
@@ -47,20 +55,42 @@ ul {
 .btn-outline-primary {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 10px 24px;
+  border-radius: 30px;
   text-transform: uppercase;
   font-weight: 500;
-  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  transition: all 0.4s ease;
   background: transparent;
   cursor: pointer;
+  display: inline-block;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary-color);
   color: var(--text-light);
-  border-color: var(--primary-hover);
-  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.btn-solid-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  border: 2px solid var(--primary-color);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-solid-primary:hover {
+  background-color: transparent;
+  color: var(--primary-color);
 }
 
 /* Utility classes */
