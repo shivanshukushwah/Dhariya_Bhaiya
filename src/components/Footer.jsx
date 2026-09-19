@@ -44,13 +44,8 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <div className="footer-bottom-content">
+          <div className="footer-bottom-content" style={{ justifyContent: 'center' }}>
             <p>&copy; {new Date().getFullYear()} Q'riflame Salon & Academy. All Rights Reserved.</p>
-            <div className="footer-bottom-links">
-              <Link to="/terms-and-conditions">Terms & Conditions</Link>
-              <span className="separator">|</span>
-              <Link to="/privacy-policy">Privacy Policy</Link>
-            </div>
           </div>
         </div>
       </div>

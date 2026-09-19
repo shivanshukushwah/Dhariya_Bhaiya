@@ -1,5 +1,5 @@
 .services-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: var(--bg-dark);
   color: var(--text-light);
 }
@@ -21,14 +21,14 @@
 .services-main-tabs {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   margin-bottom: 35px;
   flex-wrap: wrap;
 }
 
 .main-tab-btn {
-  padding: 12px 35px;
-  font-size: 16px;
+  padding: 12px 30px;
+  font-size: 15px;
   font-weight: 500;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -46,19 +46,19 @@
   background: var(--primary-color);
   color: #fff;
   border-color: var(--primary-color);
-  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 5px 20px rgba(237, 47, 89, 0.3);
 }
 
 .services-sub-tabs {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 45px;
   flex-wrap: wrap;
 }
 
 .sub-tab-btn {
-  padding: 8px 24px;
+  padding: 8px 20px;
   font-size: 13px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -79,8 +79,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 30px;
 }
 
 .service-category-card {
@@ -89,7 +89,7 @@
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: transform 0.4s ease;
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(237, 47, 89, 0.15);
 }
 
 .service-card-img-wrapper {
@@ -118,7 +118,7 @@
 
 .service-category-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: rgba(237, 47, 89, 0.4);
 }
 
 .service-category-card:hover .service-card-img {
@@ -160,18 +160,91 @@
   border-radius: 50%;
 }
 
+.service-enquire-box {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.whatsapp-enquire-btn {
+  width: 100%;
+  background-color: #25D366;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-enquire-btn:hover {
+  background-color: #1eb956;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+  font-size: 1.3rem;
+}
+
+
 @media (max-width: 768px) {
-  .services-main-tabs {
-    gap: 15px;
+  .services-section {
+    padding: 50px 0;
+  }
+
+  .services-section .section-title .main-heading {
+    font-size: 2.1rem;
   }
   
   .main-tab-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-    width: 100%;
+    padding: 10px 18px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .sub-tab-btn {
+    padding: 6px 14px;
+    font-size: 12px;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-category-card {
+    padding: 20px;
+  }
+
+  .service-card-img-wrapper {
+    margin: -20px -20px 20px -20px;
+    height: 180px;
+  }
+
+  .service-category-header h3 {
+    font-size: 1.3rem;
   }
 }
+
+@media (max-width: 480px) {
+  .services-section .section-title .main-heading {
+    font-size: 1.7rem;
+  }
+  
+  .services-main-tabs, .services-sub-tabs {
+    gap: 8px;
+  }
+}
+

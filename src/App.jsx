@@ -10,6 +10,8 @@ import GalleryPage from './pages/GalleryPage';
 import BlogPage from './pages/BlogPage';
 import FounderPage from './pages/FounderPage';
 import ContactPage from './pages/ContactPage';
+import FAQPage from './pages/FAQPage';
+import AdminLogin from './pages/AdminLogin';
 
 function App() {
   return (
@@ -21,9 +23,11 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/academy" element={<AcademyPage />} />
           <Route path="/our-gallery" element={<GalleryPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/founder" element={<FounderPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/admin" element={<AdminLogin />} />
         </Routes>
         <Footer />
       </div>

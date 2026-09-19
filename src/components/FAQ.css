@@ -35,6 +35,7 @@
   user-select: none;
   background-color: #ffffff;
   transition: background-color 0.3s ease;
+  gap: 15px;
 }
 
 .faq-question h3 {
@@ -51,6 +52,7 @@
   font-weight: bold;
   color: var(--primary-color);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .faq-item.active .faq-question h3 {
@@ -75,3 +77,21 @@
   margin: 0;
   padding-top: 15px;
 }
+
+@media (max-width: 576px) {
+  .faq-question {
+    padding: 15px;
+  }
+  .faq-question h3 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .faq-answer {
+    padding: 0 15px 15px 15px;
+  }
+  .faq-answer p {
+    font-size: 0.9rem;
+    padding-top: 10px;
+  }
+}
+

@@ -1,12 +1,12 @@
 .different-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #ffffff;
 }
 
 .different-content-wrapper {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
 }
 
 .different-text {
@@ -50,13 +50,12 @@
 .different-image {
   flex: 1;
   position: relative;
-  /* Removed padding to let the frame hug the image */
 }
 
 .different-image::before {
   content: '';
   position: absolute;
-  top: -10px; left: -10px; right: -10px; bottom: -10px; /* Uniform outer border like a real frame */
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
   border: 1px solid var(--primary-color);
   z-index: 1;
 }
@@ -67,20 +66,42 @@
   z-index: 2;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   display: block;
-  /* Removed translate offset so it perfectly aligns with frame */
   transition: transform 0.4s ease;
 }
 
 .different-image:hover img {
-  transform: scale(1.02); /* Replaced offset with a subtle zoom */
+  transform: scale(1.02);
 }
 
 @media (max-width: 992px) {
+  .different-section {
+    padding: 60px 0;
+  }
   .different-content-wrapper {
     flex-direction: column-reverse;
-    gap: 60px;
+    gap: 40px;
+  }
+  .different-text .main-heading {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .different-text .divider {
+    margin-bottom: 25px;
   }
   .different-image::before {
     top: -5px; left: -5px; right: -5px; bottom: -5px;
   }
 }
+
+@media (max-width: 576px) {
+  .different-section {
+    padding: 40px 0;
+  }
+  .different-text .main-heading {
+    font-size: 1.8rem;
+  }
+  .different-text p {
+    font-size: 0.95rem;
+  }
+}
+

@@ -3,6 +3,8 @@ import PopupModal from '../components/PopupModal';
 import HomeContent from '../components/HomeContent';
 import WelcomeSection from '../components/WelcomeSection';
 import WinningTrust from '../components/WinningTrust';
+import MakeupDescriptions from '../components/MakeupDescriptions';
+import MakeupBanner from '../components/MakeupBanner';
 
 import WhatMakesUsDifferent from '../components/WhatMakesUsDifferent';
 import MeetFounderSection from '../components/MeetFounderSection';
@@ -16,9 +18,10 @@ const Home = () => {
       <HomeContent />
       <WelcomeSection />
       <WinningTrust />
-      <PromoBannerBooking />
+      <MakeupDescriptions />
 
       <WhatMakesUsDifferent />
+      <MakeupBanner />
       <MeetFounderSection />
       <EnquiryForm />
     </>

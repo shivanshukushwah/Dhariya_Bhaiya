@@ -6,24 +6,36 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What types of services do you offer?",
-      answer: "We offer a wide range of services including bridal makeup, party makeup, airbrush makeup, professional hair styling, and rejuvenating skin care treatments."
+      question: "What types of services do you offer at Q'riflame Salon & Academy?",
+      answer: "We offer a complete range of beauty and salon services including Bridal HD & Airbrush Makeup, Party Makeup, Hair Care & Smoothening, Skincare & Facials, Manicure-Pedicure, Nail Extensions, Mehendi, Ear & Nose Piercing, as well as professional academy certification courses."
     },
     {
-      question: "How can I book an appointment?",
-      answer: "You can easily book an appointment by clicking the 'Book Appointment' button in the top right corner of our website or by contacting us directly."
+      question: "How far in advance should I book my Bridal Makeup?",
+      answer: "We recommend booking your Bridal Makeup 1 to 3 months in advance to reserve your preferred date, time slot, and senior artist consultation."
     },
     {
-      question: "Do you provide on-location or home services?",
-      answer: "Currently, our regular services are provided at our salon. However, for bridal bookings and special events, we can arrange on-location services upon prior request."
+      question: "Do you provide on-location / doorstep bridal & party makeup services?",
+      answer: "Yes! We offer professional on-location and home services for weddings, pre-bridal grooming, outstation weddings, and group party makeup upon prior request."
     },
     {
-      question: "What brands or products do you use?",
-      answer: "We use only high-end, premium, and dermatologically tested products for all our makeup and skin treatments to ensure the best results without compromising your skin's health."
+      question: "What brands of makeup and skincare products do you use?",
+      answer: "We use only premium, international, and dermatologically tested brands such as MAC, Huda Beauty, NARS, Anastasia Beverly Hills, Kryolan, O3+, and L'Oreal Professional to ensure flawless results."
     },
     {
-      question: "Is a consultation required before a treatment?",
-      answer: "For specialized skin treatments and bridal makeup, we highly recommend scheduling a consultation. This allows our experts to understand your requirements, skin type, and customize the perfect look for you."
+      question: "What is the difference between HD Makeup and Airbrush Makeup?",
+      answer: "HD (High Definition) makeup uses ultra-fine pigments applied with brushes/sponges to create a natural, photo-ready finish. Airbrush makeup uses a specialized spray gun for an ultra-lightweight, 18+ hour water-resistant finish perfect for brides."
+    },
+    {
+      question: "Can I get a pre-wedding consultation and trial session?",
+      answer: "Yes, we offer one-on-one pre-bridal consultation sessions where our senior makeup artists analyze your skin type, outfit colors, and hair preferences to create a customized bridal look."
+    },
+    {
+      question: "Are your beauty academy courses certified?",
+      answer: "Yes! All Q'riflame Academy courses include professional certification upon completion, along with practical hands-on training and starter kits depending on the selected tier."
+    },
+    {
+      question: "What payment modes are accepted?",
+      answer: "We accept Cash, UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and Net Banking."
     }
   ];
 

@@ -1,12 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeader from '../components/PageHeader';
+import CourseGallerySlider from '../components/CourseGallerySlider';
+import CertificateModal from '../components/CertificateModal';
 import AcademyPopup from '../components/AcademyPopup';
-import PromoBannerCourses from '../components/PromoBannerCourses';
+import AcademyTopBanner from '../components/AcademyTopBanner';
 import { FaStar, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import './AcademyPage.css';
 
 const AcademyPage = () => {
   const [openCourseIndex, setOpenCourseIndex] = useState(null);
+  
+  // Enrollment Form State
+  const [enrollName, setEnrollName] = useState('');
+  const [enrollCourse, setEnrollCourse] = useState('');
+  
+  // Verification Form State
+  const [enrollmentNo, setEnrollmentNo] = useState('');
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [generatedCaptcha, setGeneratedCaptcha] = useState('');
+  const [isCertModalOpen, setIsCertModalOpen] = useState(false);
+  const [verifiedCert, setVerifiedCert] = useState(null);
+
+  // Generate a random captcha
+  const refreshCaptcha = () => {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let result = '';
+    for (let i = 0; i < 5; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setGeneratedCaptcha(result);
+  };
+
+  useEffect(() => {
+    refreshCaptcha();
+  }, []);
+
+  // Mock certificate database (in the future this can come from an admin panel/API)
+  const mockCertificates = {
+    'QRI-1001': { enrollmentNo: 'QRI-1001', imageUrl: '/images/website/services/Other/Screenshot 2026-09-08 144725.png' },
+    'QRI-1002': { enrollmentNo: 'QRI-1002', imageUrl: '/images/website/services/Other/Screenshot 2026-09-08 144725.png' },
+  };
 
   const toggleCourse = (index) => {
     setOpenCourseIndex(openCourseIndex === index ? null : index);
@@ -14,10 +47,33 @@ const AcademyPage = () => {
 
   const handleVerify = (e) => {
     e.preventDefault();
+    if (captchaInput !== generatedCaptcha) {
+      alert("Invalid Captcha. Please try again.");
+      refreshCaptcha();
+      setCaptchaInput('');
+      return;
+    }
+    
+    if (mockCertificates[enrollmentNo]) {
+      setVerifiedCert(mockCertificates[enrollmentNo]);
+      setIsCertModalOpen(true);
+      // Reset form
+      setEnrollmentNo('');
+      setCaptchaInput('');
+      refreshCaptcha();
+    } else {
+      alert("Certificate not found for this enrollment number.");
+      refreshCaptcha();
+      setCaptchaInput('');
+    }
   };
 
   const handleEnroll = (e) => {
     e.preventDefault();
+    if (!enrollName || !enrollCourse) return;
+    
+    const message = `Hey I want to get some more details on your ${enrollCourse} course. My name is ${enrollName}.`;
+    window.open(`https://wa.me/919838615944?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const academyCourses = [
@@ -139,6 +195,7 @@ const AcademyPage = () => {
   return (
     <>
       <PageHeader title="Academy" breadcrumbs={[{ label: 'Academy' }]} />
+      <AcademyTopBanner />
       <AcademyPopup />
 
       {/* Master the Art of Makeup - Intro Section */}
@@ -146,7 +203,7 @@ const AcademyPage = () => {
         <div className="container">
           <div className="master-grid">
             <div className="master-image">
-              <img src="/images/drive_photos/owner%20images/03.jpg" alt="Master the Art" />
+              <img src="/images/website/owner images/_DSC2177.JPG.jpeg" alt="Master the Art" />
             </div>
             <div className="master-content">
               <h2 className="main-heading">Master the Art of Makeup with Q'riflame Salon & Academy</h2>
@@ -170,8 +227,6 @@ const AcademyPage = () => {
         </div>
       </section>
 
-      <PromoBannerCourses />
-
       {/* Our Courses - Accordion Style */}
       <section className="courses-section">
         <div className="container">
@@ -179,6 +234,8 @@ const AcademyPage = () => {
             <h2 className="main-heading">Professional Courses</h2>
             <div className="divider mx-auto"></div>
           </div>
+          
+          <CourseGallerySlider />
           
           <div className="courses-accordion-container">
             {academyCourses.map((course, index) => (
@@ -221,7 +278,14 @@ const AcademyPage = () => {
                             </ul>
                           </div>
                         )}
-                        <button className="btn-solid-primary enroll-btn mt-3">Book Your Seat Now</button>
+                        <a 
+                          href={`https://wa.me/919838615944?text=${encodeURIComponent(`Hey I want to get some more details on your ${course.title} course`)}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn-solid-primary enroll-btn mt-3 d-inline-block"
+                        >
+                          Book Your Seat Now
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -241,10 +305,10 @@ const AcademyPage = () => {
           </div>
           <div className="gallery-grid">
             {[
-              '/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/1.jpg',
-              '/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/2.jpg',
-              '/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/3.jpg',
-              '/images/drive_photos/owner%20images/meet%20the%20founder%20bride%20pics/20250616_165106.jpg'
+              "/images/website/services/Makeup/Bridal packages available at Q'riflame/amish-thakkar-lAY2TAhN06k-unsplash.jpg",
+              "/images/website/services/Makeup/Bridal packages available at Q'riflame/arto-suraj-AmKDdf_ErUA-unsplash.jpg",
+              "/images/website/services/Makeup/Bridal packages available at Q'riflame/skg-photography-3nYzHXMUV7k-unsplash.jpg",
+              "/images/website/services/Makeup/Types of makeup available at Q'riflame/rejaul-karim-6tOps3-A_18-unsplash.jpg"
             ].map((imgSrc, index) => (
               <div key={index} className="gallery-item">
                 <img src={imgSrc} alt={`Gallery ${index}`} />
@@ -266,8 +330,24 @@ const AcademyPage = () => {
           </div>
           
           <div className="testimonials-grid">
-            {[1, 2, 3].map((review) => (
-              <div key={review} className="testimonial-card">
+            {[
+              {
+                text: "Mujhe Q'riflame Academy ki practical training sabse best lagi. Maine Professional Makeup Course kiya tha aur ab main clients ko confidently attend kar leti hu! Trainers bahut hi supportive hain.",
+                name: "- Priya Sharma",
+                course: "Professional Makeup Course"
+              },
+              {
+                text: "Ear Lobe & Piercing course ka experience bahut hi shandar tha. Ek din me hi sab kuch basic se leke advance tak samajh aa gaya. Hands-on practice se saare doubts clear ho gaye.",
+                name: "- Anjali Verma",
+                course: "Ear Lobe & Piercing Course"
+              },
+              {
+                text: "Yaha se Nail Art ka course karne ke baad maine apna setup start kiya. Jo starter kit mili uski quality bahut premium hai aur unhone har ek technique bahut detail me sikhai. Highly recommended!",
+                name: "- Riya Singh",
+                course: "Nail Extension & Nail Art Course"
+              }
+            ].map((review, index) => (
+              <div key={index} className="testimonial-card">
                 <div className="stars mb-3">
                   <FaStar className="star-icon text-warning" />
                   <FaStar className="star-icon text-warning" />
@@ -275,9 +355,9 @@ const AcademyPage = () => {
                   <FaStar className="star-icon text-warning" />
                   <FaStar className="star-icon text-warning" />
                 </div>
-                <p className="review-text">"The practical training at Q'riflame Academy is unmatched. I learned so much and felt confident taking on real clients immediately after graduation!"</p>
-                <h5 className="student-name">- Priya Sharma</h5>
-                <span className="course-tag">Professional Makeup Course</span>
+                <p className="review-text">"{review.text}"</p>
+                <h5 className="student-name">{review.name}</h5>
+                <span className="course-tag">{review.course}</span>
               </div>
             ))}
           </div>
@@ -292,9 +372,9 @@ const AcademyPage = () => {
               <h3>Book Your Seats Now</h3>
               <p>Start your journey to becoming a professional beauty artist.</p>
               <form onSubmit={handleEnroll} className="enroll-form">
-                <input type="text" placeholder="Full name" required />
+                <input type="text" placeholder="Full name" value={enrollName} onChange={(e) => setEnrollName(e.target.value)} required />
                 <input type="tel" placeholder="Phone number" required />
-                <select required>
+                <select value={enrollCourse} onChange={(e) => setEnrollCourse(e.target.value)} required>
                   <option value="">Select course</option>
                   {academyCourses.map((c, i) => (
                     <option key={i} value={c.title}>{c.title}</option>
@@ -308,14 +388,26 @@ const AcademyPage = () => {
               <h3>Certificate Verification</h3>
               <p>Verify the authenticity of your Q'riflame Academy certificate.</p>
               <form onSubmit={handleVerify} className="verify-form">
-                <input type="text" placeholder="Enrollment no." required />
-                <input type="text" placeholder="Captcha" required />
+                <input type="text" placeholder="Enrollment no. (e.g. QRI-1001)" value={enrollmentNo} onChange={(e) => setEnrollmentNo(e.target.value)} required />
+                
+                <div className="captcha-container">
+                  <div className="captcha-box">{generatedCaptcha}</div>
+                  <button type="button" className="captcha-refresh" onClick={refreshCaptcha}>↻</button>
+                </div>
+                
+                <input type="text" placeholder="Enter Captcha" value={captchaInput} onChange={(e) => setCaptchaInput(e.target.value)} required />
                 <button type="submit" className="btn-outline-primary w-100 mt-2">Verify Certificate</button>
               </form>
             </div>
           </div>
         </div>
       </section>
+
+      <CertificateModal 
+        isOpen={isCertModalOpen} 
+        onClose={() => setIsCertModalOpen(false)} 
+        certificate={verifiedCert} 
+      />
     </>
   );
 };

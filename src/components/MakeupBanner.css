@@ -1,0 +1,17 @@
+.makeup-banner-section {
+  padding: 40px 20px;
+  background-color: #0a0a0a; /* Dark background matching the rest of the site */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.makeup-poster-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}

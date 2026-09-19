@@ -10,7 +10,7 @@
 }
 
 .contact-info-box {
-  background: var(--primary-color, #c89696);
+  background: var(--primary-color);
   color: white;
   padding: 40px;
   border-radius: 10px;
@@ -119,16 +119,47 @@
 }
 
 @media (max-width: 992px) {
+  .contact-section {
+    padding: 50px 0;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   .legal-content {
     grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+  }
+  .contact-info-box, .contact-form-box, .legal-box {
+    padding: 30px 20px;
   }
 }
 
 @media (max-width: 768px) {
   .form-row {
     grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .contact-form button {
+    width: 100%;
+    align-self: stretch;
   }
 }
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 35px 0;
+  }
+  .contact-info-box, .contact-form-box, .legal-box {
+    padding: 20px 15px;
+  }
+  .contact-form-box h2 {
+    font-size: 22px;
+  }
+  .info-item {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+}
+

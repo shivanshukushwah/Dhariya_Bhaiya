@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { servicesData } from './ServicesData';
+import { FaWhatsapp } from 'react-icons/fa';
 import './Services.css';
 
 const categoryImages = {
@@ -65,6 +66,11 @@ const Services = () => {
     });
   };
 
+  const handleEnquireWhatsApp = (categoryName) => {
+    const message = `hey I want more details on your ${categoryName.toLowerCase()} package`;
+    window.open(`https://wa.me/919838615944?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   const currentSubTabs = Object.keys(servicesData[activeMainTab]);
   const activeSubTab = activeSubTabs[activeMainTab];
   const activeContent = servicesData[activeMainTab][activeSubTab];
@@ -73,7 +79,7 @@ const Services = () => {
     <section className="services-section">
       <div className="container">
         <div className="section-title text-center">
-          <h2 className="main-heading">Our Services</h2>
+          <h2 className="main-heading">OUR PACKAGES</h2>
           <div className="divider mx-auto"></div>
         </div>
         
@@ -123,6 +129,14 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <div className="service-enquire-box">
+                <button 
+                  className="whatsapp-enquire-btn"
+                  onClick={() => handleEnquireWhatsApp(category.subCategory)}
+                >
+                  Enquire Now <FaWhatsapp className="whatsapp-icon" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -133,4 +147,5 @@ const Services = () => {
 };
 
 export default Services;
+
 

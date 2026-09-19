@@ -30,12 +30,14 @@ const EnquiryForm = () => {
               <div className="form-group">
                 <select required>
                   <option value="">Select service</option>
-                  <option value="bridal">Bridal Makeup</option>
-                  <option value="reception">Reception Makeup</option>
-                  <option value="engagement">Engagement Makeup</option>
-                  <option value="airbrush">AirBrush Makeup</option>
-                  <option value="academy">Academy Courses</option>
-                  <option value="other">Other Services</option>
+                  <option value="skin">Skin</option>
+                  <option value="hair">Hair</option>
+                  <option value="makeup">Makeup</option>
+                  <option value="manipedi">Mani-pedi</option>
+                  <option value="nail">Nail</option>
+                  <option value="mehendi">Mehendi</option>
+                  <option value="academy">Academy</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
               <div className="form-group">

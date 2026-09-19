@@ -22,21 +22,19 @@
   color: var(--text-dark);
 }
 
-/* Hero Section - Layered (Bhaavya Kapur Style) */
+/* Hero Section - Layered */
 .layered-hero {
   position: relative;
   height: 480px;
-  /* Made more compact/panoramic */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
-  /* Darker grey base */
-  /* Intense dark paper/concrete texture like BK */
-  background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
+  background-color: #111;
+  background-image: linear-gradient(rgba(15, 15, 15, 0.7), rgba(15, 15, 15, 0.7)), url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   margin-bottom: 0px;
-  /* No margin so it touches the next section */
 }
 
 .layered-bg-marquee {
@@ -45,7 +43,6 @@
   left: 0;
   width: 100%;
   transform: translateY(-50%) scaleY(1.2);
-  /* Reduced slightly for compact height */
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
@@ -60,13 +57,10 @@
 
 .layered-bg-text-track span {
   font-size: 18vw;
-  /* Scaled down slightly to fit compact height */
   font-family: var(--font-body), 'Arial', sans-serif;
-  /* Clean blocky font to make the outline parallel and architectural */
   color: transparent;
   -webkit-text-stroke: 1px var(--primary-color);
   font-weight: 600;
-  /* Max weight imported for Montserrat */
   letter-spacing: 20px;
   opacity: 0.6;
   padding-right: 50px;
@@ -76,12 +70,9 @@
   0% {
     transform: translate3d(0, 0, 0);
   }
-
   100% {
     transform: translate3d(-25%, 0, 0);
   }
-
-  /* Moves exactly 1 of the 4 spans seamlessly */
 }
 
 .layered-content-container {
@@ -100,21 +91,16 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4.2rem;
-  /* Scaled down to match compact banner */
-  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #ffffff;
-  /* Pure white like BK */
   white-space: nowrap;
   z-index: 4;
-  /* Brought text in front of the owner image */
   text-align: center;
   width: 100%;
-  letter-spacing: 12px;
-  /* Slightly tighter for compact look */
-  font-weight: 500;
-  text-shadow: none;
-  /* BK doesn't have drop shadow on this text */
+  letter-spacing: 8px;
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
 }
 
 .layered-owner-img {
@@ -125,45 +111,66 @@
   transform-origin: bottom center;
   z-index: 3;
   height: 95%;
-  /* She will reach almost the very top, perfectly matching BK proportions */
   width: auto;
   pointer-events: none;
 }
 
+.main-hero-img {
+  filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.2));
+}
+
 @media (max-width: 992px) {
-  .layered-bg-text {
+  .layered-bg-text-track span {
     font-size: 25vw;
+    letter-spacing: 10px;
   }
 
   .layered-main-heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     white-space: normal;
-    padding: 0 20px;
-    line-height: 1.4;
-    top: 35%;
+    padding: 0 15px;
+    line-height: 1.3;
+    letter-spacing: 4px;
+    top: 40%;
   }
 
   .layered-owner-img {
-    max-height: 50vh;
-    margin-top: 80px;
+    height: 75%;
+  }
+}
+
+@media (max-width: 576px) {
+  .layered-hero {
+    height: 360px;
   }
 
-  .layered-actions {
-    flex-direction: column;
-    margin-top: 20px;
+  .layered-main-heading {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    top: 42%;
+  }
+
+  .main-heading {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+  }
+
+  .sub-heading {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
   }
 }
 
 /* Features Grid */
 .features-header {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 25px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .feature-card {
@@ -224,10 +231,22 @@
   padding-left: 5px;
 }
 
+@media (max-width: 576px) {
+  .feature-card {
+    height: 320px;
+  }
+  .feature-card-overlay {
+    padding: 25px 20px 20px;
+  }
+  .feature-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
 /* CTA Banner */
 .cta-banner {
   background-color: var(--bg-dark);
-  padding: 80px 0;
+  padding: 60px 0;
   border-top: 2px solid var(--primary-color);
 }
 
@@ -236,7 +255,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 @media (min-width: 992px) {
@@ -258,4 +277,16 @@
   color: #A0A0A0;
   font-size: 1.1rem;
   max-width: 600px;
+}
+
+@media (max-width: 576px) {
+  .cta-banner {
+    padding: 40px 0;
+  }
+  .cta-text h2 {
+    font-size: 1.7rem;
+  }
+  .cta-text p {
+    font-size: 0.95rem;
+  }
 }

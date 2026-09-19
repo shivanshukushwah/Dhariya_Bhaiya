@@ -1,46 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
-import { FaMapMarkerAlt, FaEnvelope, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="page_header">
-      <div className="container" style={{ maxWidth: '100%', margin: '0 auto', padding: '10px 40px' }}>
-        <div className="header-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="header-container">
+        <div className="header-inner">
           
           {/* Logo on the Left */}
           <div className="logo-container">
-            <Link to="/" className="logo" aria-label="Salon homepage">
+            <Link to="/" className="logo" aria-label="Salon homepage" onClick={closeMenu}>
               <img src="/images/drive_photos/owner%20images/logo_trimmed.png" alt="Q'riflame Salon Logo" />
             </Link>
           </div>
 
-          {/* Right Column for Top Bar & Main Nav */}
-          <div className="header-right-side">
-            
-            {/* Top Row: Mini links and Socials */}
-            <div className="top-mini-bar">
-              <div className="mini-links">
-                <Link to="/book-appointment" className="mini-btn">Book Appointment</Link>
-                <Link to="/salon-finder" className="mini-btn">Salon Finder <FaMapMarkerAlt size={12} /></Link>
-              </div>
-              <div className="social-icons">
-                <a href="#"><FaEnvelope /></a>
-                <a href="#"><FaFacebook /></a>
-                <a href="#"><FaYoutube /></a>
-                <a href="#"><FaInstagram /></a>
-              </div>
-            </div>
+          {/* Mobile Hamburger Button */}
+          <button 
+            className="mobile-menu-toggle" 
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
 
-            {/* Bottom Row: Main Menu */}
+          {/* Right Column for Main Nav */}
+          <div className={`header-right-side ${isMenuOpen ? 'mobile-open' : ''}`}>
+            
+            {/* Main Menu Navigation */}
             <nav className="nav-container">
               <ul className="main-menu">
-                <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Home</NavLink></li>
-                <li><NavLink to="/services" className={({isActive}) => isActive ? 'active' : ''}>Services</NavLink></li>
-                <li><NavLink to="/academy" className={({isActive}) => isActive ? 'active' : ''}>Academy</NavLink></li>
-                <li><NavLink to="/our-gallery" className={({isActive}) => isActive ? 'active' : ''}>Gallery</NavLink></li>
-                <li><NavLink to="/contact-us" className={({isActive}) => isActive ? 'active' : ''}>Contact Us</NavLink></li>
+                <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>Home</NavLink></li>
+                <li><NavLink to="/services" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>Services</NavLink></li>
+                <li><NavLink to="/academy" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>Academy</NavLink></li>
+                <li><NavLink to="/our-gallery" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>Gallery</NavLink></li>
+                <li><NavLink to="/faq" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>FAQ</NavLink></li>
+                <li><NavLink to="/contact-us" className={({isActive}) => isActive ? 'active' : ''} onClick={closeMenu}>Contact Us</NavLink></li>
               </ul>
             </nav>
 
@@ -52,3 +58,4 @@ const Header = () => {
 };
 
 export default Header;
+

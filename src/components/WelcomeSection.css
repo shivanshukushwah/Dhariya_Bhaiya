@@ -1,12 +1,12 @@
 .welcome-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: var(--bg-light);
 }
 
 .welcome-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -21,7 +21,7 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-weight: 500;
 }
 
@@ -29,13 +29,13 @@
   font-size: 2.8rem;
   color: var(--text-dark);
   font-family: var(--font-heading);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   line-height: 1.2;
   font-weight: 600;
 }
 
 .welcome-text-content p {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-size: 1.05rem;
 }
 
@@ -43,22 +43,21 @@
   font-style: italic;
   font-weight: 500;
   color: var(--text-dark);
-  margin-top: 35px;
+  margin-top: 25px;
   border-left: 2px solid var(--primary-color);
-  padding-left: 25px;
+  padding-left: 20px;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .welcome-image-wrapper {
   position: relative;
-  /* Removed padding to let the frame hug the image */
 }
 
 .welcome-image-wrapper::before {
   content: '';
   position: absolute;
-  top: -10px; left: -10px; right: -10px; bottom: -10px; /* Slight outer border effect like a true frame */
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
   border: 1px solid var(--primary-color);
   z-index: 1;
 }
@@ -69,19 +68,42 @@
   z-index: 2;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
-  /* Removed translate offset so it stays perfectly in frame */
 }
 
 .welcome-image-wrapper:hover .welcome-img {
-  transform: scale(1.02); /* Replaced offset with a subtle zoom instead */
+  transform: scale(1.02);
 }
 
 @media (max-width: 992px) {
+  .welcome-section {
+    padding: 60px 0;
+  }
   .welcome-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
+  }
+  .welcome-text-content .main-heading {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
   }
   .welcome-image-wrapper::before {
     top: -5px; left: -5px; right: -5px; bottom: -5px;
   }
 }
+
+@media (max-width: 576px) {
+  .welcome-section {
+    padding: 40px 0;
+  }
+  .welcome-text-content .main-heading {
+    font-size: 1.8rem;
+  }
+  .welcome-text-content p {
+    font-size: 0.95rem;
+  }
+  .welcome-text-content .highlight-text {
+    font-size: 1rem;
+    padding-left: 15px;
+  }
+}
+

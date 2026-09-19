@@ -20,11 +20,11 @@ const HomeContent = () => {
         <div className="layered-content-container">
           {/* Foreground Text that sits behind the owner */}
           <h1 className="layered-main-heading">
-            BE A Q'RIFLAME BRIDE
+            BE A Q'UTIE BRIDE
           </h1>
           
-          {/* Owner Image Cutout */}
-          <img src="/images/drive_photos/owner%20images/01_20_54_AM_cutout_trimmed.png" alt="Founder" className="layered-owner-img" />
+          {/* Owner Image Cutout - Use old image until new red suit image is added */}
+          <img src="/images/drive_photos/owner%20images/01_20_54_AM_cutout_trimmed.png" alt="Founder" className="layered-owner-img main-hero-img" />
         </div>
       </div>
 
@@ -33,50 +33,34 @@ const HomeContent = () => {
         <div className="feature-grid">
           <Link to="/services" className="feature-card">
             <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/amish-thakkar-lAY2TAhN06k-unsplash.jpg" alt="Skin Services" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Skin Services</h3>
-              <span className="feature-link">Read More &rarr;</span>
-            </div>
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Salon Services/Hair/adam-winger-FkAZqQJTbXM-unsplash.jpg" alt="Hair Services" className="feature-card-img" />
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Makeup/Types of makeup available at Q'riflame/sofia-inductgroup-RW3zjCKHek4-unsplash.jpg" alt="Makeup Services" className="feature-card-img" />
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Salon Services/Mani-Pedi/anna-keibalo-QMgwloa7nQs-unsplash.jpg" alt="Mani-Pedi Services" className="feature-card-img" />
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Salon Services/Mani-Pedi/anna-keibalo-QMgwloa7nQs-unsplash.jpg" alt="Nail Services" className="feature-card-img" />
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Other/ikshana-productions-L-_tcsP-wZc-unsplash.jpg" alt="Mehendi Services" className="feature-card-img" />
+          </Link>
+
+          <Link to="/services" className="feature-card">
+            <img src="/images/drive_photos/services/Other/rune-enstad-cowLgyb63c4-unsplash.jpg" alt="Other Services" className="feature-card-img" />
           </Link>
 
           <Link to="/academy" className="feature-card">
             <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/arto-suraj-AmKDdf_ErUA-unsplash.jpg" alt="Academy" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Academy</h3>
-              <span className="feature-link">Explore Courses &rarr;</span>
-            </div>
-          </Link>
-
-          <Link to="/services" className="feature-card">
-            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-3nYzHXMUV7k-unsplash.jpg" alt="Hair Service" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Hair Service</h3>
-              <span className="feature-link">View Treatments &rarr;</span>
-            </div>
-          </Link>
-
-          <Link to="/services" className="feature-card">
-            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-nFR6mRpn8kc-unsplash.jpg" alt="Manicure & Pedicure" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Manicure & Pedicure</h3>
-              <span className="feature-link">Read More &rarr;</span>
-            </div>
-          </Link>
-
-          <Link to="/services" className="feature-card">
-            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/skg-photography-z-iEOGOd_kg-unsplash.jpg" alt="Makeup" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Makeup</h3>
-              <span className="feature-link">Read More &rarr;</span>
-            </div>
-          </Link>
-
-          <Link to="/services" className="feature-card">
-            <img src="/images/drive_photos/services/Makeup/Bridal%20packages%20available%20at%20Q'riflame/the-artist-studio-oeKiBmplBtU-unsplash.jpg" alt="Unisex" className="feature-card-img" />
-            <div className="feature-card-overlay">
-              <h3>Bridal Packages</h3>
-              <span className="feature-link">Read More &rarr;</span>
-            </div>
           </Link>
         </div>
       </div>

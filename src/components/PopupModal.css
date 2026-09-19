@@ -9,8 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Increased z-index to ensure it is above everything */
+  z-index: 10000;
   backdrop-filter: blur(5px);
+  padding: 15px;
 }
 
 .modal-content {
@@ -18,7 +19,9 @@
   background: white;
   border-radius: 15px;
   max-width: 500px;
-  width: 90%;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
   animation: modalFadeIn 0.3s ease-out;
 }
 
@@ -46,20 +49,20 @@
 
 .popup-booking-card {
   background: white;
-  padding: 40px;
+  padding: 35px 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .popup-booking-card h2 {
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 26px;
+  margin-bottom: 20px;
   color: #333;
   font-family: 'Playfair Display', serif;
 }
 
 .popup-booking-card .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .popup-booking-card input,
@@ -68,7 +71,7 @@
   padding: 12px 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 15px;
   transition: all 0.3s ease;
   background-color: #fafafa;
 }
@@ -77,14 +80,25 @@
 .popup-booking-card select:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 5px rgba(200, 150, 150, 0.3);
+  box-shadow: 0 0 5px rgba(237, 47, 89, 0.3);
 }
 
 .popup-booking-card button {
   width: 100%;
   padding: 14px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 576px) {
+  .popup-booking-card {
+    padding: 25px 18px;
+  }
+  .popup-booking-card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
