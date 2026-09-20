@@ -35,10 +35,14 @@ const AcademyPage = () => {
     refreshCaptcha();
   }, []);
 
-  // Mock certificate database (in the future this can come from an admin panel/API)
+  // Certificate database with downloaded Google Drive student certificates
   const mockCertificates = {
-    'QRI-1001': { enrollmentNo: 'QRI-1001', imageUrl: '/images/website/services/Other/Screenshot 2026-09-08 144725.png' },
-    'QRI-1002': { enrollmentNo: 'QRI-1002', imageUrl: '/images/website/services/Other/Screenshot 2026-09-08 144725.png' },
+    'QRI-1001': { enrollmentNo: 'QRI-1001', imageUrl: '/images/certificates/15_days_class/aditi_paswan_15_DAYS.png', name: 'Aditi Paswan' },
+    'QRI-1002': { enrollmentNo: 'QRI-1002', imageUrl: '/images/certificates/15_days_class/anjani_ydv_15_DAYS.png', name: 'Anjani Yadav' },
+    'QRI-1003': { enrollmentNo: 'QRI-1003', imageUrl: '/images/certificates/15_days_class/simran_jaiswal_15_DAYS.png', name: 'Simran Jaiswal' },
+    'QRI-1004': { enrollmentNo: 'QRI-1004', imageUrl: '/images/certificates/full_course/archana_sharma.png', name: 'Archana Sharma' },
+    'QRI-1005': { enrollmentNo: 'QRI-1005', imageUrl: '/images/certificates/full_course/bharti_gupta_full.png', name: 'Bharti Gupta' },
+    'QRI-1006': { enrollmentNo: 'QRI-1006', imageUrl: '/images/certificates/full_course/reema_singh_full.png', name: 'Reema Singh' },
   };
 
   const toggleCourse = (index) => {
@@ -300,20 +304,25 @@ const AcademyPage = () => {
       <section className="academy-gallery-section">
         <div className="container">
           <div className="section-title text-center">
-            <h2 className="main-heading">Academy Gallery</h2>
+            <h2 className="main-heading">Academy & Certificate Gallery</h2>
+            <p className="text-muted mt-2">Certified Students & Classroom Achievements</p>
             <div className="divider mx-auto"></div>
           </div>
           <div className="gallery-grid">
             {[
-              "/images/website/services/Makeup/Bridal packages available at Q'riflame/amish-thakkar-lAY2TAhN06k-unsplash.jpg",
-              "/images/website/services/Makeup/Bridal packages available at Q'riflame/arto-suraj-AmKDdf_ErUA-unsplash.jpg",
-              "/images/website/services/Makeup/Bridal packages available at Q'riflame/skg-photography-3nYzHXMUV7k-unsplash.jpg",
-              "/images/website/services/Makeup/Types of makeup available at Q'riflame/rejaul-karim-6tOps3-A_18-unsplash.jpg"
-            ].map((imgSrc, index) => (
+              { src: "/images/certificates/15_days_class/aditi_paswan_15_DAYS.png", title: "Certificate - Aditi Paswan" },
+              { src: "/images/certificates/full_course/archana_sharma.png", title: "Certificate - Archana Sharma" },
+              { src: "/images/certificates/15_days_class/simran_jaiswal_15_DAYS.png", title: "Certificate - Simran Jaiswal" },
+              { src: "/images/certificates/full_course/bharti_gupta_full.png", title: "Certificate - Bharti Gupta" },
+              { src: "/images/drive_photos/owner images/01_04_23 AM.png", title: "Live Demo Class" },
+              { src: "/images/drive_photos/owner images/01_07_52 AM.png", title: "Practical Hands-on Session" },
+              { src: "/images/drive_photos/owner images/01_10_46 AM.png", title: "Student Guidance" },
+              { src: "/images/certificates/15_days_class/kusumlata_gautam_15_DAYS.png", title: "Certificate - Kusumlata Gautam" }
+            ].map((item, index) => (
               <div key={index} className="gallery-item">
-                <img src={imgSrc} alt={`Gallery ${index}`} />
+                <img src={item.src} alt={item.title} />
                 <div className="gallery-overlay">
-                  <span>View Details</span>
+                  <span>{item.title}</span>
                 </div>
               </div>
             ))}
