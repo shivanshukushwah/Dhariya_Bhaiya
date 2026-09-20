@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { addEnquiry } from '../utils/adminStore';
 import './ContactPage.css';
 
 const ContactPage = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addEnquiry({
+      name,
+      email,
+      phone,
+      subject,
+      message,
+      service: subject || 'Contact Us Message',
+      source: 'Contact Us Page'
+    });
+    alert(`Thank you, ${name}! Your message has been sent successfully. We will reach out to you shortly.`);
+    setName('');
+    setEmail('');
+    setPhone('');
+    setSubject('');
+    setMessage('');
+  };
+
   return (
     <>
       <PageHeader title="Contact Us" breadcrumbs={[{ label: 'Contact Us' }]} />
@@ -47,16 +73,46 @@ const ContactPage = () => {
               <h2>Send Us A Message</h2>
               <p>Have a question about our services or academy? Fill out the form below.</p>
               
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-row">
-                  <input type="text" placeholder="Your Name" required />
-                  <input type="email" placeholder="Your Email" required />
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required 
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Your Email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required 
+                  />
                 </div>
                 <div className="form-row">
-                  <input type="tel" placeholder="Phone Number" required />
-                  <input type="text" placeholder="Subject" required />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Subject" 
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    required 
+                  />
                 </div>
-                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <textarea 
+                  placeholder="Your Message" 
+                  rows="6" 
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                ></textarea>
                 <button type="submit" className="btn-solid-primary">Send Message</button>
               </form>
             </div>

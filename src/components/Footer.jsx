@@ -30,6 +30,7 @@ const Footer = () => {
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/our-gallery">Gallery</Link></li>
               <li><Link to="/contact-us">Contact</Link></li>
+              <li><Link to="/admin" style={{ opacity: 0.7, fontSize: '0.85rem' }}>🔐 Admin Panel</Link></li>
             </ul>
           </div>
 

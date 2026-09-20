@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { addEnquiry } from '../utils/adminStore';
 import './PopupModal.css';
 
 const PopupModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('');
 
   useEffect(() => {
     // Open popup automatically after 2 seconds
@@ -15,8 +19,18 @@ const PopupModal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    setIsModalOpen(false); // Close modal on submit
+    addEnquiry({
+      name,
+      phone,
+      service,
+      message: `Popup session booking request for ${service || 'General Service'}`,
+      source: 'Popup Modal Booking'
+    });
+    alert(`Thank you, ${name}! Your booking request for ${service || 'session'} has been submitted.`);
+    setName('');
+    setPhone('');
+    setService('');
+    setIsModalOpen(false);
   };
 
   if (!isModalOpen) return null;
@@ -29,22 +43,38 @@ const PopupModal = () => {
           <h2>Book your beauty session</h2>
           <form className="booking-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <input type="text" placeholder="Full name" required />
+              <input 
+                type="text" 
+                placeholder="Full name" 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required 
+              />
             </div>
             <div className="form-group">
-              <input type="tel" placeholder="Ph no." required />
+              <input 
+                type="tel" 
+                placeholder="Ph no." 
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required 
+              />
             </div>
             <div className="form-group">
-              <select required>
+              <select 
+                value={service}
+                onChange={(e) => setService(e.target.value)}
+                required
+              >
                 <option value="">Select service</option>
-                <option value="skin">Skin</option>
-                <option value="hair">Hair</option>
-                <option value="makeup">Makeup</option>
-                <option value="manipedi">Mani-pedi</option>
-                <option value="nail">Nail</option>
-                <option value="mehendi">Mehendi</option>
-                <option value="academy">Academy</option>
-                <option value="others">Others</option>
+                <option value="Skin Care">Skin</option>
+                <option value="Hair Styling">Hair</option>
+                <option value="Bridal & Party Makeup">Makeup</option>
+                <option value="Mani-Pedi">Mani-pedi</option>
+                <option value="Nail Art & Extensions">Nail</option>
+                <option value="Mehendi">Mehendi</option>
+                <option value="Academy Courses">Academy</option>
+                <option value="Other Services">Others</option>
               </select>
             </div>
             <button type="submit" className="btn-solid-primary">Book now</button>

@@ -5,6 +5,7 @@ import CertificateModal from '../components/CertificateModal';
 import AcademyPopup from '../components/AcademyPopup';
 import AcademyTopBanner from '../components/AcademyTopBanner';
 import { FaStar, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { addEnquiry } from '../utils/adminStore';
 import './AcademyPage.css';
 
 const AcademyPage = () => {
@@ -76,6 +77,13 @@ const AcademyPage = () => {
     e.preventDefault();
     if (!enrollName || !enrollCourse) return;
     
+    addEnquiry({
+      name: enrollName,
+      service: enrollCourse,
+      message: `Course Enrollment Request for ${enrollCourse}`,
+      source: 'Academy Seat Booking'
+    });
+
     const message = `Hey I want to get some more details on your ${enrollCourse} course. My name is ${enrollName}.`;
     window.open(`https://wa.me/919838615944?text=${encodeURIComponent(message)}`, '_blank');
   };
